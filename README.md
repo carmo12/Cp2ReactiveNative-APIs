@@ -55,4 +55,4 @@ O projeto também pode ser executado no [Expo Snack](https://snack.expo.dev).
 
 ## Autor
 
-Substitua pelo seu nome e turma.
+João Carmo Turma 2CCPR
