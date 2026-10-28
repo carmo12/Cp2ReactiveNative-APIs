@@ -1,11 +1,58 @@
-# Sample Snack app
+# TVmaze App
 
-Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!
+Aplicativo React Native (Expo) que consome a API pública [TVmaze](https://www.tvmaze.com/api) para listar séries e exibir os episódios de cada uma.
 
-When you're ready to see everything that Expo provides (or if you want to use your own editor) you can **Download** your project and use it with [expo cli](https://docs.expo.dev/get-started/installation/#expo-cli)).
+Projeto desenvolvido para o CheckPoint 3: Manipulação de dados JSON via API com React Native.
 
-All projects created in Snack are publicly available, so you can easily share the link to this project via link, or embed it on a web page with the `<>` button.
+## Funcionalidades
 
-If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.dev/c/expo-dev-tools/61) or [Discord](https://chat.expo.dev/).
+- **Tela inicial:** lista as séries obtidas em `https://api.tvmaze.com/shows`, com imagem e nome.
+- **Tela de detalhe:** abre ao tocar em uma série e lista os episódios obtidos em `https://api.tvmaze.com/shows/{id}/episodes`, com temporada, número e nome.
+- **Sinopse do episódio:** ao tocar em um episódio, a sinopse é exibida e traduzida para o português.
+- **Carregamento e erros:** `ActivityIndicator` durante o carregamento e mensagem de erro caso a requisição falhe.
+- **Dados nulos:** séries sem imagem mostram um espaço reservado, e episódios sem número aparecem como "Especial".
 
-Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack).
+## Tecnologias
+
+- React Native com Expo
+- React Navigation (`@react-navigation/native` e `@react-navigation/native-stack`)
+- `FlatList`, `useState` e `useEffect`
+- `fetch` com `async/await` e `try/catch/finally`
+
+## Estrutura do projeto
+
+```
+.
+├── App.js                  # Configuração da Stack Navigation
+├── index.js
+├── package.json
+└── screens
+    ├── HomeScreen.js       # Listagem de séries
+    └── DetailScreen.js     # Episódios da série selecionada
+```
+
+## Como executar
+
+1. Instale as dependências:
+   ```
+   npm install
+   ```
+2. Inicie o projeto:
+   ```
+   npx expo start
+   ```
+3. Abra no celular com o app **Expo Go** (lendo o QR code) ou em um emulador.
+
+O projeto também pode ser executado no [Expo Snack](https://snack.expo.dev).
+
+## APIs utilizadas
+
+| Finalidade | Endpoint |
+|---|---|
+| Lista de séries | `https://api.tvmaze.com/shows` |
+| Episódios de uma série | `https://api.tvmaze.com/shows/{id}/episodes` |
+| Tradução da sinopse | `https://api.mymemory.translated.net/get` |
+
+## Autor
+
+Substitua pelo seu nome e turma.
